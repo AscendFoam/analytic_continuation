@@ -1,0 +1,17 @@
+Chebyshev stability scan completed on FactorialType.
+Evaluation point: z=1.5
+Ground truth: 1.329340388179
+Best overall configuration: degree=28, constraint_order=8, regularization=1e-08, abs_error=1.788189e-04, schur_condition_number=1.036862e+10
+Best-per-degree median degree: 14.0
+Best-per-degree table:
+  degree= 4: order=1, reg=1e-06, abs_error=9.933049e-03, schur_cond=4.233420e+05
+  degree= 6: order=3, reg=1e-06, abs_error=4.396469e-04, schur_cond=1.287591e+06
+  degree= 8: order=5, reg=1e-14, abs_error=1.252722e-03, schur_cond=1.248470e+15
+  degree=10: order=6, reg=1e-06, abs_error=3.406015e-04, schur_cond=4.250522e+07
+  degree=12: order=5, reg=1e-06, abs_error=2.707096e-04, schur_cond=6.976672e+06
+  degree=14: order=8, reg=1e-08, abs_error=4.339759e-03, schur_cond=6.759204e+10
+  degree=16: order=8, reg=1e-08, abs_error=6.030519e-03, schur_cond=3.607581e+10
+  degree=18: order=8, reg=1e-08, abs_error=6.449963e-03, schur_cond=2.422392e+10
+  degree=20: order=8, reg=1e-08, abs_error=6.594303e-03, schur_cond=1.838989e+10
+  degree=24: order=8, reg=1e-08, abs_error=4.990112e-03, schur_cond=1.288050e+10
+  degree=28: order=8, reg=1e-08, abs_error=1.788189e-04, schur_cond=1.036862e+10

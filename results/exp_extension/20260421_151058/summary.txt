@@ -1,0 +1,22 @@
+Extension experiment completed for sequence types A/B/C.
+A=variable-base tetration, B=fixed-base tetration, C=factorial type.
+Type A limiting values:
+  hermite_cubic: z=0 -> 0.3930142426287744, z=-1 -> 0.0
+  hermite_quintic: z=0 -> 0.4279837443424448, z=-1 -> 0.0
+  chebyshev: z=0 -> 0.4015779947757775, z=-1 -> 0.0
+Failed point evaluations: 15
+  A/hermite_cubic z=-2.0: failed:ValueError Variable-base inverse recurrence requires z > 0 and z != 1.
+  A/hermite_cubic z=5.0: failed:OverflowError (34, 'Result too large')
+  A/hermite_quintic z=-2.0: failed:ValueError Variable-base inverse recurrence requires z > 0 and z != 1.
+  A/hermite_quintic z=5.0: failed:OverflowError (34, 'Result too large')
+  A/chebyshev z=-2.0: failed:ValueError Variable-base inverse recurrence requires z > 0 and z != 1.
+  A/chebyshev z=5.0: failed:OverflowError (34, 'Result too large')
+  B/hermite_cubic z=-2.0: failed:ValueError math domain error
+  B/hermite_quintic z=-2.0: failed:ValueError math domain error
+  B/chebyshev z=-2.0: failed:ValueError math domain error
+  C/hermite_cubic z=-2.0: failed:ZeroDivisionError float division by zero
+  C/hermite_cubic z=-1.0: failed:ZeroDivisionError float division by zero
+  C/hermite_quintic z=-2.0: failed:ZeroDivisionError float division by zero
+  C/hermite_quintic z=-1.0: failed:ZeroDivisionError float division by zero
+  C/chebyshev z=-2.0: failed:ZeroDivisionError float division by zero
+  C/chebyshev z=-1.0: failed:ZeroDivisionError float division by zero

@@ -1,0 +1,16 @@
+{
+  "sequence": "factorial_type",
+  "eval_point": 1.5,
+  "truth_value": 1.329340388179137,
+  "chebyshev_degrees": [
+    4,
+    6,
+    8,
+    10,
+    12,
+    16,
+    20,
+    24
+  ],
+  "max_constraint_order": 6
+}

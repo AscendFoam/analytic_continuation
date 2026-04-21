@@ -1,0 +1,7 @@
+Energy comparison completed for sequence types A/B/C.
+A=variable-base tetration, B=fixed-base tetration, C=factorial type.
+Best energy by sequence:
+  A: method=hermite_cubic, energy=1.338276172693e+00, left_derivative=0.3930142426287743
+  B: method=hermite_cubic, energy=8.993636703566e-03, left_derivative=0.14523922042703075
+  C: method=hermite_cubic, energy=1.714285714286e+00, left_derivative=0.2857142857142858
+Best factorial point error: method=hermite_cubic, z=0.0, abs_error=2.220446049250e-16

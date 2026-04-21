@@ -1,0 +1,18 @@
+{
+  "target_points": [
+    0.5,
+    1.5,
+    2.5,
+    3.5
+  ],
+  "methods": [
+    "hermite_cubic",
+    "hermite_quintic",
+    "chebyshev"
+  ],
+  "sequences": [
+    "variable_base_tetration",
+    "fixed_base_tetration",
+    "factorial_type"
+  ]
+}

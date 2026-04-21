@@ -1,0 +1,5 @@
+Convergence experiment completed on FactorialType.
+Evaluation point: z=1.5
+Ground truth: 1.329340388179
+Best configuration: chebyshev (dof=11, degree=10, constraint_order=6) with abs_error=3.406015e-04
+Best Chebyshev configuration: degree=10, constraint_order=6, abs_error=3.406015e-04

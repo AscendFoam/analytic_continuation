@@ -1,0 +1,2 @@
+Baseline experiment completed with the cubic Hermite method.
+Rows written: 36

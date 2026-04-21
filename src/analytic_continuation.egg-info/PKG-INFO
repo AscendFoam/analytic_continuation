@@ -1,0 +1,66 @@
+Metadata-Version: 2.4
+Name: analytic-continuation
+Version: 0.1.0
+Summary: Numerical experiments for analytic continuation of recurrence-defined sequences.
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24
+Requires-Dist: scipy>=1.10
+Requires-Dist: matplotlib>=3.7
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+
+# Analytic Continuation
+
+这是一个面向数值实验的解析延拓工程骨架，目标是研究满足
+
+`f(z) = g(z, f(z - 1))`
+
+这类泛函方程的递推序列，重点覆盖变底数迭代幂次、固定底数迭代幂次、阶乘类递推以及用户自定义递推。
+
+## 当前状态
+
+首版骨架已经包含：
+
+- 统一的递推序列抽象与四类序列实现
+- 基底区间多项式解的表示与应变能计算
+- 可运行的 M1 三次 Hermite 基线方法
+- 可运行的 M2 五次 Hermite 方法
+- Chebyshev 谱方法的首版主线实现
+- M4-M5 的方法占位接口
+- 基础评估工具、实验脚本与测试
+
+## 目录
+
+```text
+analytic_continuation/
+├── docs/
+├── experiments/
+├── results/
+├── src/analytic_continuation/
+│   ├── core/
+│   ├── evaluation/
+│   ├── methods/
+│   └── utils/
+└── tests/
+```
+
+## 快速开始
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+pytest
+python experiments/exp_gamma_validation.py
+```
+
+## 当前实现边界
+
+当前已经完成三条求解链路：
+
+- `HermiteCubicMethod`：M1 基线方法，解析优化左端一阶导数
+- `HermiteQuinticMethod`：M2 方法，利用一阶/二阶导数约束并数值优化能量
+- `ChebyshevMethod`：M3 首版谱方法，基于 Chebyshev-Lobatto 节点、微分矩阵和 KKT 线性约束求解
+
+其中 `ChebyshevMethod` 已经具备高阶线性边界约束接口，但在更高次数下仍会受到条件数放大的影响，后续还需要继续做正交化、约束设计和数值稳定性增强。

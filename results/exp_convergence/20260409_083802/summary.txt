@@ -1,0 +1,4 @@
+Convergence experiment completed on FactorialType.
+Evaluation point: z=1.5
+Ground truth: 1.329340388179
+Best configuration: hermite_quintic (dof=6, degree=n/a, constraint_order=n/a) with abs_error=5.991144e-04

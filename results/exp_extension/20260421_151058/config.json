@@ -1,0 +1,26 @@
+{
+  "extension_points": [
+    -2.0,
+    -1.0,
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    3.0,
+    4.0,
+    5.0
+  ],
+  "sequences": [
+    "variable_base_tetration",
+    "fixed_base_tetration",
+    "factorial_type"
+  ],
+  "methods": [
+    "hermite_cubic",
+    "hermite_quintic",
+    "chebyshev"
+  ],
+  "notes": "Type A z=0 and z=-1 use sequence-specific limiting values when available."
+}
