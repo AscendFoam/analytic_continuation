@@ -1,0 +1,9 @@
+M5 regularized iteration scan completed.
+Best FactorialType gamma error: run_id=C_deg8_ord4_le1_lr100, max_abs_error=7.575449e-03, endpoint_residual_norm=5.956178e+00, scaled_endpoint_residual_norm=8.066739e-03, energy=1.804431e+00
+Best FactorialType endpoint residual: run_id=C_deg12_ord4_le1_lr100, endpoint_residual_norm=7.490287e+00, scaled_endpoint_residual_norm=7.498964e-03, max_abs_error=1.979031e-02, energy=1.734834e+00
+Best endpoint residual for A: run_id=A_deg12_ord4_le1_lr100, endpoint_residual_norm=3.848986e+00, scaled_endpoint_residual_norm=1.004402e-02, energy=1.350308e+00
+Best endpoint residual for B: run_id=B_deg12_ord4_le1_lr100, endpoint_residual_norm=2.548372e-02, scaled_endpoint_residual_norm=1.355289e-03, energy=8.872916e-03
+Best endpoint residual for C: run_id=C_deg12_ord4_le1_lr100, endpoint_residual_norm=7.490287e+00, scaled_endpoint_residual_norm=7.498964e-03, energy=1.734834e+00
+Failed configurations: 0
+Non-converged optimizer configurations: 1
+  B_deg12_ord4_le1_lr0.1: iterations=500, objective=0.00043025896938066774

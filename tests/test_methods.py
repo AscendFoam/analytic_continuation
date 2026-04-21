@@ -6,6 +6,7 @@ from analytic_continuation.core.sequence import FactorialType, VariableBaseTetra
 from analytic_continuation.methods.chebyshev import ChebyshevMethod
 from analytic_continuation.methods.hermite_cubic import HermiteCubicMethod
 from analytic_continuation.methods.hermite_quintic import HermiteQuinticMethod
+from analytic_continuation.methods.regularized_iter import RegularizedIterationMethod
 
 
 def test_cubic_method_matches_boundary_values() -> None:
@@ -77,3 +78,22 @@ def test_derivative_constraint_api_separates_linear_and_linearized_constraints()
     assert len(linear_constraints) < len(linearized_constraints)
     assert {order for order, _, _ in linear_constraints} == {1}
     assert {order for order, _, _ in linearized_constraints} == {1, 2, 3, 4}
+
+
+def test_regularized_iteration_method_matches_boundary_values() -> None:
+    seq = FactorialType()
+    method = RegularizedIterationMethod(
+        degree=6,
+        constraint_order=3,
+        lambda_residual=100.0,
+        maxiter=250,
+    )
+    result = method.solve(seq, target_points=[1.0, 1.5, 2.0])
+
+    assert math.isclose(result.eval_at[1.0], 1.0, abs_tol=1e-8)
+    assert math.isclose(result.eval_at[2.0], 2.0, abs_tol=1e-8)
+    assert abs(result.eval_at[1.5] - math.gamma(2.5)) < 0.01
+    assert result.metadata["endpoint_residual_norm"] >= 0.0
+    assert result.metadata["scaled_endpoint_residual_norm"] >= 0.0
+    assert result.metadata["optimizer_backend"] == "least_squares"
+    assert result.metadata["optimizer_iterations"] >= 0

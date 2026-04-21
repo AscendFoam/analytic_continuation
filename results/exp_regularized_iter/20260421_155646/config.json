@@ -1,0 +1,27 @@
+{
+  "eval_points": [
+    0.5,
+    1.5,
+    2.5
+  ],
+  "degrees": [
+    6,
+    8,
+    10,
+    12
+  ],
+  "constraint_orders": [
+    4
+  ],
+  "lambda_energies": [
+    1.0
+  ],
+  "lambda_residuals": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "maxiter": 500,
+  "initial_method": "hermite_quintic"
+}

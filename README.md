@@ -15,7 +15,8 @@
 - 可运行的 M1 三次 Hermite 基线方法
 - 可运行的 M2 五次 Hermite 方法
 - Chebyshev 谱方法的首版主线实现
-- M4-M5 的方法占位接口
+- M4 的方法占位接口
+- M5 正则化残差最小化的最小原型
 - 基础评估工具、实验脚本与测试
 
 ## 目录
@@ -52,11 +53,14 @@ python experiments/exp_convergence.py --autotune-chebyshev
 
 ## 当前实现边界
 
-当前已经完成三条求解链路：
+当前已经完成四条求解链路：
 
 - `HermiteCubicMethod`：M1 基线方法，解析优化左端一阶导数
 - `HermiteQuinticMethod`：M2 方法，利用一阶/二阶导数约束并数值优化能量
 - `ChebyshevMethod`：M3 系数空间谱方法，默认采用一组经过稳定性扫描回调的平衡参数
+- `RegularizedIterationMethod`：M5 最小原型，固定端点值并用 least-squares 后端软最小化曲率能量和端点导数传播残差
 - `ChebyshevMethod.autotune(...)`：针对有 ground truth 的参考问题做离散网格调参
 
 当前默认参数是一组偏稳健的折中配置，而不是直接使用扫描中的最高 degree 组合。对于 `FactorialType` 这类有标准解的问题，建议先用 `autotune` 扫一轮候选参数，再把选出的配置固定到实验脚本中。
+
+M5 目前仍是实验性原型，适合用 `experiments/exp_regularized_iter.py` 扫描 `degree / lambda_energy / lambda_residual / residual_scale_strategy`，观察 Gamma 误差、应变能和端点残差之间的权衡。
